@@ -28,7 +28,7 @@ jobs:
           file: ~/coverage/lcov.info
 
   build-android:
-      name: Build on ${{ matrix.os }}
+      name: Build Android
       runs-on: ${{ matrix.os }}
       strategy:
         matrix:
@@ -50,7 +50,7 @@ jobs:
           path: build/app/outputs/flutter-apk
           
   build-ios:
-      name: Build on ${{ matrix.os }}
+      name: Build iOS
       runs-on: ${{ matrix.os }}
       strategy:
         matrix:
@@ -72,7 +72,7 @@ jobs:
           path: build/app/outputs/flutter-apk
   
   build-web:
-      name: Build on ${{ matrix.os }}
+      name: Build WEB
       runs-on: ${{ matrix.os }}
       strategy:
         matrix:
