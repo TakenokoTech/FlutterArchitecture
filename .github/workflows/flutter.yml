@@ -90,7 +90,7 @@ jobs:
       - run: flutter analyze
       - run: flutter build web
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v2.5.0
+        uses: peaceiris/actions-gh-pages@v3.6.1
         env:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/web
