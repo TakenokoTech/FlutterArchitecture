@@ -62,7 +62,7 @@ jobs:
           java-version: '12.x'
       - uses: subosito/flutter-action@v1
         with:
-          channel: 'beta'
+          channel: 'dev'
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter build ios
@@ -84,11 +84,13 @@ jobs:
           java-version: '12.x'
       - uses: subosito/flutter-action@v1
         with:
-          channel: 'beta'
+          channel: 'dev'
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter build web
-      - uses: actions/upload-artifact@v1
-        with:
-          name: apk
-          path: build/web
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: master
+          PUBLISH_DIR: ./build/web
