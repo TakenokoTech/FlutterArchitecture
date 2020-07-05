@@ -46,7 +46,7 @@ jobs:
       - run: flutter build apk
       - uses: actions/upload-artifact@v1
         with:
-          name: apk
+          name: android
           path: build/app/outputs/flutter-apk
           
 #   build-ios:
@@ -91,7 +91,7 @@ jobs:
       - run: flutter build web
       - uses: actions/upload-artifact@v1
         with:
-          name: apk
+          name: web
           path: build/web
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.6.1
