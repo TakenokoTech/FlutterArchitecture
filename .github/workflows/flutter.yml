@@ -67,9 +67,9 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'dev'
-      - run: pushd ios; pod install; popd
       - run: flutter pub get
       - run: flutter analyze
+      - run: pushd ios; pod install; popd
       - run: flutter build ios --no-codesign --debug
       - uses: actions/upload-artifact@v1
         with:
