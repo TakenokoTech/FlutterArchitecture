@@ -69,7 +69,6 @@ jobs:
           channel: 'dev'
       - run: flutter pub get
       - run: flutter analyze
-      - run: pushd ios; pod install; popd
       - run: flutter build ios --no-codesign --debug
       - uses: actions/upload-artifact@v1
         with:
