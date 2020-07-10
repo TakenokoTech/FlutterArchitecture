@@ -66,9 +66,10 @@ jobs:
           base64 --decode adhoc.mobileprovision.txt > adhoc.mobileprovision
       - uses: subosito/flutter-action@v1
         with:
-          channel: 'stable'
+          channel: 'dev'
       - run: flutter pub get
       - run: flutter analyze
+      - run: flutter doctor -v
       - run: flutter build ios --no-codesign --debug
       - uses: actions/upload-artifact@v1
         with:
