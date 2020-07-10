@@ -69,8 +69,7 @@ jobs:
           channel: 'dev'
       - run: flutter pub get
       - run: flutter analyze
-      - run: flutter doctor -v
-      - run: flutter build ios --no-codesign --debug
+      - run: flutter build ios --no-codesign --debug -v
       - uses: actions/upload-artifact@v1
         with:
           name: apk
