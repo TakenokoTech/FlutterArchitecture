@@ -74,6 +74,8 @@ jobs:
         with:
           channel: 'beta'
       - run: flutter pub get
+      - run: pod update
+        working-directory: ./ios
       - run: flutter analyze
       - run: flutter build ios --no-codesign --debug
       - uses: actions/upload-artifact@v1
