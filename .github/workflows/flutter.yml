@@ -52,7 +52,7 @@ jobs:
         with:
           node-version: 8.x
       - run: |
-          yarn global add firebase-tools
+          npm install -g firebase-tools
           firebase appdistribution:distribute build/app/outputs/apk/debug/app-debug.apk --app "${{ secrets.FIREBASE_ANDROID_APP_ID }}" --token "${{ secrets.FIREBASE_ANDROID_TOKEN }}"
           
   build-ios:
