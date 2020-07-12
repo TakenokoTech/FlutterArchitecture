@@ -1,0 +1,49 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+	desc "Description of what the lane does"
+	lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+	end
+
+	lane :build_ipa do
+		# gym(
+		# 	workspace: "./Runner.xcworkspace",
+		# 	configuration: "Debug",
+		# 	scheme: "Runner",
+		# 	clean: true,
+		# 	include_bitcode: false,
+		# 	output_directory: "../build/ios",
+		# 	output_name: "app-release.ipa",
+		# 	export_method: "ad-hoc"
+		# )
+		skip_docs
+		build_app(
+			scheme: "Runner",
+			export_method: "ad-hoc",
+			output_directory: "../build/ios",
+			output_name: "app-release.ipa"
+		)    
+	end
+
+	after_all do |lane|
+	end
+	
+	error do |lane, exception|
+	end
+end
