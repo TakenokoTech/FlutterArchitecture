@@ -33,6 +33,7 @@ platform :ios do
 		# 	export_method: "ad-hoc"
 		# )
 		skip_docs
+		match(type: "adhoc", app_identifier: "tech.takenoko.ios.flutter-architecture.adhoc")
 		build_app(
 			scheme: "Runner",
 			export_method: "ad-hoc",

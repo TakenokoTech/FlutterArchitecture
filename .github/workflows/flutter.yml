@@ -78,6 +78,10 @@ jobs:
         working-directory: ./ios
       - run: flutter analyze
       - run: flutter build ios --no-codesign --debug
+      - run: |
+          cd ios
+          bundle exec fastlane build_ipa
+          cd ..
       - uses: actions/upload-artifact@v1
         with:
           name: ios
