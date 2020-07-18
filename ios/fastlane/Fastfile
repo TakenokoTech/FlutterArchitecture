@@ -17,16 +17,11 @@ default_platform(:ios)
 
 platform :ios do
 	before_all do
-	    create_keychain(
-	      name: 'name',
-	      password: 'password',
-	      timeout: 1800
-	    )
-	end
-	
-	desc "Description of what the lane does"
-	lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+		create_keychain(
+			name: 'name',
+			password: 'password',
+			timeout: 1800
+		)
 	end
 
 	lane :build_ipa do
@@ -43,7 +38,7 @@ platform :ios do
 		skip_docs
 		match(
 			type: "adhoc",
-			app_identifier: "tech.takenoko.ios.flutter-architecture.adhoc",
+			app_identifier: "tech.takenoko.ios.flutter-architecture",
 			readonly: true
 		)
 		build_app(
