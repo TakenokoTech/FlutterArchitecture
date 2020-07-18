@@ -1,4 +1,4 @@
-git_url("https://github.com/TakenokoTech/FlutterArchitecture.git")
+git_url("https://github.com/TakenokoTech/certificates.git")
 
 storage_mode("git")
 
