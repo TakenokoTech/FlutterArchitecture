@@ -81,7 +81,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         with:
           name: ios
-          path: build/ios/iphoneos
+          path: build/ios
   
   build-web:
       name: Build WEB
@@ -112,7 +112,7 @@ jobs:
           publish_dir: ./build/web
           publish_branch: gh-pages
           
-  AppDistribution:
+  upload-android:
     name: Upload AppDistribution
     needs: [build-android, build-ios]
     runs-on: ubuntu-latest
@@ -120,18 +120,26 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: android
-      - uses: actions/download-artifact@v1
-        with:
-          name: ios
       - shell: bash
         run: |
           ls -la android
-          ls -la ios
       - uses: wzieba/Firebase-Distribution-Github-Action@v1.1.1
         with:
           appId: ${{secrets.FIREBASE_ANDROID_APP_ID}}
           token: ${{secrets.FIREBASE_ANDROID_TOKEN}}
           file: android/app-release.apk
+          
+  upload-ios:
+    name: Upload AppDistribution Android
+    needs: [build-android, build-ios]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v1
+        with:
+          name: ios
+      - shell: bash
+        run: |
+          ls -la ios
       - uses: wzieba/Firebase-Distribution-Github-Action@v1.1.1
         with:
           appId: ${{secrets.FIREBASE_IOS_APP_ID}}
