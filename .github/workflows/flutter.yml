@@ -114,17 +114,26 @@ jobs:
           
   AppDistribution:
     name: Upload AppDistribution
-    needs: [build-android]
+    needs: [build-android, build-ios]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v1
         with:
           name: android
+      - uses: actions/download-artifact@v1
+        with:
+          name: ios
       - shell: bash
         run: |
           ls -la android
+          ls -la ios
       - uses: wzieba/Firebase-Distribution-Github-Action@v1.1.1
         with:
           appId: ${{secrets.FIREBASE_ANDROID_APP_ID}}
           token: ${{secrets.FIREBASE_ANDROID_TOKEN}}
           file: android/app-release.apk
+      - uses: wzieba/Firebase-Distribution-Github-Action@v1.1.1
+        with:
+          appId: ${{secrets.FIREBASE_IOS_APP_ID}}
+          token: ${{secrets.FIREBASE_IOS_TOKEN}}
+          file: ios/app-release.ipa
