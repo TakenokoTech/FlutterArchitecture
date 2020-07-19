@@ -112,7 +112,7 @@ jobs:
           
   AppDistribution:
     name: Upload AppDistribution
-    needs: [build-android, build-ios]
+    needs: [build-android]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v1
