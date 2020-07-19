@@ -76,6 +76,8 @@ jobs:
           cd ios
           bundle exec fastlane build_ipa
           cd ..
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
       - uses: actions/upload-artifact@v1
         with:
           name: ios
