@@ -113,7 +113,7 @@ jobs:
           publish_branch: gh-pages
           
   upload-android:
-    name: Upload AppDistribution
+    name: Upload Android
     needs: [build-android, build-ios]
     runs-on: ubuntu-latest
     steps:
@@ -130,7 +130,7 @@ jobs:
           file: android/app-release.apk
           
   upload-ios:
-    name: Upload AppDistribution Android
+    name: Upload iOS
     needs: [build-android, build-ios]
     runs-on: ubuntu-latest
     steps:
