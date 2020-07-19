@@ -1,4 +1,4 @@
-package com.example.FullterArchitecture
+package tech.takenoko.FlutterArchitecture
 
 import io.flutter.embedding.android.FlutterActivity
 
