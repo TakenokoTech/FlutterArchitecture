@@ -25,7 +25,7 @@ platform :ios do
 		match(
 			type: "adhoc",
 			app_identifier: "tech.takenoko.ios.flutter-architecture",
-			git_basic_authorization: ENV["MATCH_GIT_BASIC_AUTHORIZATION"],
+			git_basic_authorization: Base64.encode64("TakenokoTech:" + ENV["MATCH_GIT_BASIC_AUTHORIZATION"]),
 			readonly: true
 		)
 		build_app(
