@@ -21,16 +21,6 @@ platform :ios do
 	end
 
 	lane :build_ipa do
-		# gym(
-		# 	workspace: "./Runner.xcworkspace",
-		# 	configuration: "Debug",
-		# 	scheme: "Runner",
-		# 	clean: true,
-		# 	include_bitcode: false,
-		# 	output_directory: "../build/ios",
-		# 	output_name: "app-release.ipa",
-		# 	export_method: "ad-hoc"
-		# )
 		skip_docs
 		match(
 			type: "adhoc",
