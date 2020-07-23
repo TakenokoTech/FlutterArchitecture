@@ -77,7 +77,6 @@ jobs:
           bundle exec fastlane build_ipa
           cd ..
         env:
-          GITHUB_ACTOR: ${{ GITHUB_ACTOR }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
       - uses: actions/upload-artifact@v1
