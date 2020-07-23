@@ -5,3 +5,8 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/nokotech/actions/blob/master/LICENSE)
 
 Flutter project.
+
+<p align="center">
+  <br>
+  <a href=""><strong>Takenoko Tech.</strong></a>
+</p>
