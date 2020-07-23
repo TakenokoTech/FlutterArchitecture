@@ -78,6 +78,7 @@ jobs:
           cd ..
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
       - uses: actions/upload-artifact@v1
         with:
           name: ios
