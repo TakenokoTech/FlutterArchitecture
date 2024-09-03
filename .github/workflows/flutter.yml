@@ -118,7 +118,7 @@ jobs:
     needs: [build-android, build-ios]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: android
       - shell: bash
@@ -135,7 +135,7 @@ jobs:
     needs: [build-android, build-ios]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v1
+      - uses: actions/download-artifact@v4.1.7
         with:
           name: ios
       - shell: bash
